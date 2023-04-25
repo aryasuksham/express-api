@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="'en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        SocketApplication
+    </title>
+</head>
+
+<body>
+    client1
+    <button onclick="sendMessage()">send msg</button>
+    <script>
+        const socket = new WebSocket("ws://localhost:4000");
+
+        socket.addEventListener("open", (event) => {
+            console.log("Connected to WS server");
+        });
+
+        socket.addEventListener("message", (event) => {
+            // console.log("Message from server ", event.data);
+            if (event.data instanceof Blob) {
+                reader = new FileReader();
+
+                reader.onload = () => {
+                    console.log("New message: " + reader.result);
+                };
+
+                reader.readAsText(event.data);
+            } else {
+                console.log("Result: " + event.data);
+            }
+        });
+
+        const sendMessage = () => {
+            socket.send("Hello from client1")
+        }
+    </script>
+</body>
+
+</html>

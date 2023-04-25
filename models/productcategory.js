@@ -12,6 +12,9 @@ const productCategorySchema = new mongoose.Schema({
     status: {
         type: Boolean,
         default: false
+    },
+    lastUpdatedBy:{
+        type:String
     }
 },
     { timestamps: true }

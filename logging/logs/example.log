@@ -1,0 +1,7 @@
+{"level":"info","message":"Hello, Winston!"}
+{"level":"error","message":"Hello, Winston logger, the first error!"}
+{"level":"error","message":"Hello, Winston logger, the second error!"}
+{"level":"error","message":"the first error!"}
+{"level":"error","message":"the second error!"}
+{"level":"error","message":"the first error!"}
+{"level":"error","message":"the second error!"}
